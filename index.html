@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <title>I Love you Muskaan</title>
+    <style>
+      body{
+        margin: 0;
+        padding:0;
+        position: relative;
+        background-color: #FFB9DB;
+      }
+      
+      .top-left{
+        position: absolute;
+        top:0;
+        left:0;
+      }
+
+      .top-right{
+        position: absolute;
+        top:0;
+        right:0;
+      }
+
+      .bottom-left{
+        position: absolute;
+        left:0;
+        bottom:0;
+      }
+      .bottom-right{
+        position: absolute;
+        right:0;
+        bottom:0;
+      }
+
+      .couple{
+        position: absolute;
+        left:15%;
+        bottom:0;
+      }
+
+      .heart-ballon{
+        position: absolute;
+        left:5%;
+        top:25%;
+      }
+
+      .building{
+        position: absolute;
+        left:0;
+        bottom:0;
+      }
+
+      .container{
+        position:absolute;
+        top:12%;
+        right:5%;
+      }
+
+      .i-lov-u{
+        font-family: 'Cabin';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 48px;
+        
+        leading-trim: both;
+        text-edge: cap;
+        text-align: center;
+
+        color: #E75A9E;
+      }
+
+      .btn-lov{
+        text-align: center;
+        color:white;
+        background: #E75A9E;
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .lov-img{
+        width: 130px;
+        height: 130px;
+        border-radius: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <img class="top-left" src="image/top-left-flower.svg"/>
+    <img class="top-right" src="image/top-right-flower.svg"/>
+    <img class="building" src="image/building.svg"/>
+    <img class="bottom-left" src="image/mount-floor.svg"/>
+    <img class="bottom-right" src="image/bottom-right-flower.svg"/>
+    <img class="couple" src="image/couple.svg"/>
+    <img class="heart-ballon" src="image/heart-ballon.svg"/>
+    <div class="container">
+      <p class="i-lov-u" id="lovText">I Love You Muskaan 😘</p>
+      <div id="lov-img-div" style="display:none;padding:2rem;">
+        <div style="display:flex;justify-content:space-around;">
+          <div>
+            <img id="girlImg" src="image/girl1.jpeg" class="lov-img"/>
+          </div>
+          <div>
+            <img id="boyImg" src="image/boy1.jpeg" class="lov-img"/>
+          </div>
+        </div>
+        <div style="display:flex;justify-content: center;">
+          <div>
+            <img id="babyImg" src="image/baby1.jpeg" class="lov-img"/>
+          </div>
+        </div>
+      </div>
+      <a id="btn-love">
+        <div style="display:flex;justify-content: center;">
+          <div class="btn-lov">
+            <div id="btnText">
+              I love you vignesh 💋
+            </div>
+            <div>&nbsp;</div>
+            <div>Click me</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <script>
+      let clickCount = 0;
+      document.addEventListener('DOMContentLoaded', function() {
+        let btnLove = document.getElementById('btn-love');
+
+        btnLove.addEventListener('click', function(event) {
+          clickCount += 1
+          let btnText = document.getElementById('btnText');
+          let lovText = document.getElementById('lovText');
+          let girlImg = document.getElementById('girlImg');
+          let boyImg = document.getElementById('boyImg');
+          let babyImg = document.getElementById('babyImg');
+          let lovImgDiv = document.getElementById('lov-img-div');
+
+          if(clickCount == 1){
+            girlImg.src = "image/girl1.jpeg";
+            boyImg.src ="image/boy1.jpeg";
+            babyImg.src = "image/baby1.jpeg";
+            lovText.textContent = "You are my sweetheart Muskaan 💋";
+            btnText.textContent = "Kiss you vignesh 😘";
+            lovImgDiv.style.display = "block";
+          }
+          if(clickCount == 2){
+            girlImg.src = "image/girl2.jpeg";
+            boyImg.src ="image/boy2.jpeg";
+            babyImg.src = "image/baby2.jpeg";
+            lovText.textContent = "Come with me Muskaan 😭";
+            btnText.textContent = "I come vignesh 😚";
+            lovImgDiv.style.display = "block";
+          }
+          if(clickCount == 3){
+            lovText.textContent = "I Love You Muskaan 😘";
+            btnText.textContent = "I love you vignesh 💋";
+            lovImgDiv.style.display = "none";
+            clickCount = 0
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
